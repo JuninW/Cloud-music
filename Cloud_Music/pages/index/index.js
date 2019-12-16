@@ -9,6 +9,7 @@ Page({
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
+  currentid:'0',
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -50,5 +51,16 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  tap: function (e) {
+
+    console.log(e)
+
+    console.log(e.target.dataset.tapid)
+
+    var that = this
+
+    that.setData({ currentid: e.target.dataset.tapid })
+
   }
 })

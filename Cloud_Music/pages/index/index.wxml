@@ -1,7 +1,9 @@
 <!--index.wxml-->
-<view>
-<navigator>123</navigator>
-<navigator>123</navigator>
-<navigator>123</navigator>
+<view class="outter">
+ <view data-tapid="0" class="slid-item {{currentid==0?'on':''}}" bindtap="tap">读书</view>
+
+ <view data-tapid="1" class="slid-item {{currentid==1?'on':''}}" bindtap="tap">出游</view>
+
+ <view data-tapid="2" class="slid-item {{currentid==2?'on':''}}" bindtap="tap">观影</view>
 
 </view>
