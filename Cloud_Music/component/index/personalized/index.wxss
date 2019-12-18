@@ -1,0 +1,9 @@
+/* component/index/personalized/index.wxss */
+
+.box-title{
+
+  border-left: 2px solid red;
+  margin-top:20px;
+  padding-left: 10px;
+  font-size: 16px;
+}

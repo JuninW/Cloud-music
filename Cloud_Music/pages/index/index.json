@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "personalized":"../../component/index/personalized/index"
+  }
 }

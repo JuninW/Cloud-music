@@ -10,5 +10,18 @@
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现音乐"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "我的收藏"
+        
+      }
+    ]
+  }
 }

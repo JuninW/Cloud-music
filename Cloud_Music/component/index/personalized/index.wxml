@@ -1,0 +1,10 @@
+<!--component/index/personalized/index.wxml-->
+<view>
+  <view class="box-title">
+    推荐歌单
+  </view>
+  <view>
+    
+  </view> 
+
+</view>

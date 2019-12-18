@@ -1,9 +1,11 @@
 <!--index.wxml-->
 <view class="outter">
- <view data-tapid="0" class="slid-item {{currentid==0?'on':''}}" bindtap="tap">读书</view>
+  <view data-tapid="0" class="slid-item {{currentid==0?'on':''}}" bindtap="recommend">推荐音乐</view>
 
- <view data-tapid="1" class="slid-item {{currentid==1?'on':''}}" bindtap="tap">出游</view>
+  <view data-tapid="1" class="slid-item {{currentid==1?'on':''}}" bindtap="getMusic">热歌榜</view>
 
- <view data-tapid="2" class="slid-item {{currentid==2?'on':''}}" bindtap="tap">观影</view>
-
+  <view data-tapid="2" class="slid-item {{currentid==2?'on':''}}" bindtap="sercah">搜索</view>
+</view>
+<view hidden="{{currentid !=0}}">
+    <personalized ></personalized>
 </view>
