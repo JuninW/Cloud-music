@@ -3,8 +3,8 @@
   <view class="box-title">
     推荐歌单
   </view>
-  <view>
-    
+  <view wx:for='{{tabList}}' wx:for-item='item' wx:key='id' class="pic-box">
+   <image src="{{item.picUrl}}" class="pic-img"></image>
   </view> 
 
 </view>
