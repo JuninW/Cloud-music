@@ -6,6 +6,10 @@ Component({
    * 组件的属性列表
    */
   created: function () {
+  
+      wx.showLoading({
+        title: '加载中...',
+      })
     http.personalized({
       data: {
         limit: 6
@@ -19,8 +23,7 @@ Component({
         }
         this.setData({
           tabList: res.result
-        },
-        )
+        })
       }
     }),
     http.inxeList({
@@ -30,7 +33,10 @@ Component({
         })
       }
     })
-
+    setTimeout(function(){
+      wx.hideLoading()
+    },2000)
+    
 
   },
   properties: {
@@ -69,7 +75,6 @@ Component({
       //大于6位数是十万 (以10W分割 10W以下全部显示)
       else if (numStr.length > 5&&numStr.length<8) {
         let decimal = numStr.substring(numStr.length - 4, numStr.length - 4 + point)
-        console.log(parseFloat(parseInt(num / 10000) + '.' + decimal) + '万')
         return parseFloat(parseInt(num / 10000) + '.' + decimal) + '万';
       }
     },

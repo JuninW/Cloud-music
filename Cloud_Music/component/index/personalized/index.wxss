@@ -10,7 +10,7 @@
 
 .pic-box {
   width: 33.3%;
-  border: 0.5px solid #eee;
+  border: 0.5px solid rgb(255, 252, 252);
   box-sizing: border-box;
   display: inline-block;
   position: relative;
@@ -49,5 +49,6 @@
 }
 
 .song-box{
-  
+  padding:5px; 
+  font-size: 16px;
 }

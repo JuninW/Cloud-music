@@ -22,7 +22,15 @@ Page({
       }
     })
   },
-
+  onLoad:function(e){
+    wx.showLoading({
+      title: '请等待...',
+    })
+    setTimeout(function(){
+      wx.hideLoading()
+    },1000)
+   
+  },
   //获取热歌
   getMusic: function(e) {
     var that = this

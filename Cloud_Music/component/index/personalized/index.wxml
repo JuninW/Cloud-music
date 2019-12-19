@@ -1,6 +1,6 @@
 <!--component/index/personalized/index.wxml-->
 <view>
-<!-- 推荐歌单 -->
+  <!-- 推荐歌单 -->
   <view>
     <view class="box-title">
       推荐歌单
@@ -18,17 +18,17 @@
 
     </view>
   </view>
-<!-- 最新音乐 -->
+  <!-- 最新音乐 -->
   <view>
     <view class="box-title">
       最近音乐
     </view>
     <view>
-      <view wx:for='{{newSongList}}' wx:key='id'>
-        <view class="song-title">{{item.name}}</view>
-        
-       <view>{{item.song.artists[0].name}}</view>
-      
+      <view wx:for='{{newSongList}}' wx:key='id' class="song-box">
+        <view class="song-title">{{item.name}}<text>{{item.song.alias}}</text></view>
+
+        <view>{{item.song.artists[0].name}}</view>
+
       </view>
     </view>
   </view>

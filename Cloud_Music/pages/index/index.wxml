@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <view class="outter">
+
   <view data-tapid="0" class="slid-item {{currentid==0?'on':''}}" bindtap="recommend">推荐音乐</view>
 
   <view data-tapid="1" class="slid-item {{currentid==1?'on':''}}" bindtap="getMusic">热歌榜</view>
