@@ -1,22 +1,53 @@
 /* component/index/personalized/index.wxss */
 
-.box-title{
-
+.box-title {
   border-left: 2px solid red;
-  margin-top:20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
   padding-left: 10px;
   font-size: 16px;
 }
-.pic-box{
-  width: 30%;
-  float: left;
-  margin:5px;
-  border:0.5px solid #eee;
+
+.pic-box {
+  width: 33.3%;
+  border: 0.5px solid #eee;
   box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  text-align: right;
   
-display: line;
 }
-.pic-img{
- width: 100%;
- height:110px;
+.pic-num-box{
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  top:0;
+  right:0;
+  vertical-align:middle;
+   margin-right: 5px;
+}
+
+.pic-img {
+  width: 100%;
+}
+ .pic-clickNum-after{
+   display:inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAvElEQVQoU72SPQ5BURCFv7MBvagovU6no5borEVUKNiB1gbUOgk70Cl11kCiODIv7748REJjqsmZ+ebvXvGjqZpvuwEsgA5wA3bAStIl5ZWA7SkwA+bAFbgDNSDXJYVODthuAucCGAHbouIA2BR6JumUgCVwlLSx3Y5AUSj3bQ+BrqRJAqLKWFJ0eTPb9dhHUpaAfcwu6fAB6AFrSa0qEGK5XAIrxzhI6v8PiFvHSNE2v/fLSGXs6aW/+SUPc0xiDcxuyKMAAAAASUVORK5CYII=) 100% no-repeat;
+  z-index: 999;
+  margin-right: 5px;
+}
+
+.pic-clickNum{
+  display:inline-block;
+  z-index: 99;
+  min-width: 0px;
+  color: #fff;
+  text-align: right;
+  font-size: 12px;
+}
+
+.song-box{
+  
 }

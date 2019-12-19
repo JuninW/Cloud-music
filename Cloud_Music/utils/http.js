@@ -16,7 +16,7 @@ module.exports = {
       data = { ...data, ...params.data }
     }
     wx.request({
-      url: 'http://192.168.8.136:3000' + url, // 就是拼接上前缀,此接口域名是开放接口，可访问
+      url: 'http://192.168.1.69:3000' + url, // 就是拼接上前缀,此接口域名是开放接口，可访问
       method: method == 'post' ? 'post' : 'get', // 判断请求类型，除了值等于'post'外，其余值均视作get
       data,
       header: {

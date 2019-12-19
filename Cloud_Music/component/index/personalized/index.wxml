@@ -1,10 +1,35 @@
 <!--component/index/personalized/index.wxml-->
 <view>
-  <view class="box-title">
-    推荐歌单
-  </view>
-  <view wx:for='{{tabList}}' wx:for-item='item' wx:key='id' class="pic-box">
-   <image src="{{item.picUrl}}" class="pic-img"></image>
-  </view> 
+<!-- 推荐歌单 -->
+  <view>
+    <view class="box-title">
+      推荐歌单
+    </view>
+    <view>
+      <view wx:for='{{tabList}}' wx:for-item='item' wx:key='id' class="pic-box">
+        <image src="{{item.picUrl}}" class="pic-img" mode="widthFix">
+        </image>
+        <view class="pic-num-box">
+          <icon class="pic-clickNum-after"></icon>
+          <text class="pic-clickNum">{{item.playCount}}</text>
+        </view>
 
+      </view>
+
+    </view>
+  </view>
+<!-- 最新音乐 -->
+  <view>
+    <view class="box-title">
+      最近音乐
+    </view>
+    <view>
+      <view wx:for='{{newSongList}}' wx:key='id'>
+        <view class="song-title">{{item.name}}</view>
+        
+       <view>{{item.song.artists[0].name}}</view>
+      
+      </view>
+    </view>
+  </view>
 </view>

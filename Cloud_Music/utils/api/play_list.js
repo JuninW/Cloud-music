@@ -4,7 +4,7 @@ import { http } from '../http'; // 引入刚刚封装好的http模块，import�
 
 // 推荐歌曲
  function inxeList(params) {
-  http('/personalized/newsong', 'get', params)  // 接口请求的路由地址以及请求方法在此处传递
+   http('/personalized/newsong', 'get', params)  // 接口请求的路由地址以及请求方法在此处传递
 }
 
 
