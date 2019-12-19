@@ -5,21 +5,27 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#f11919",
+    "navigationBarBackgroundColor": "#ff1616",
     "navigationBarTitleText": "网易云音乐",
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#ff1616",
     "list": [
       {
         "pagePath": "pages/index/index",
+        "iconPath":"/img/Music.png",
+        "selectedIconPath": "/img/tagMusic.png",
         "text": "发现音乐"
       },
       {
         "pagePath": "pages/logs/logs",
-        "text": "我的收藏"
+        "text": "我的",
+        "iconPath":"/img/me.png",
+        "selectedIconPath":"/img/tagMe.png"
         
       }
     ]

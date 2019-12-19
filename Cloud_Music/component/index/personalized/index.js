@@ -16,7 +16,7 @@ Component({
       },
       success: res => {
         for (let key in res.result) {
-          res.result[key].playCount= this.tranNumber(res.result[key].playCount, 2)
+          res.result[key].playCount= this.tranNumber    (res.result[key].playCount, 2)
           if (res.result[key].playCount==undefined){
             res.result[key].playCount= '401万'
           }
@@ -24,12 +24,30 @@ Component({
         this.setData({
           tabList: res.result
         })
+      },
+      fail:err =>{
+        wx.showToast({
+          title: '请求歌单列表失败',
+          icon: 'none',
+          image:'/img/error.png',
+          size: '5px',
+          duration: 1000,
+        })
       }
     }),
     http.inxeList({
       success: res=>{
         this.setData({
           newSongList:res.result
+        })
+      },
+      fail:err=>{
+        wx.showToast({
+          title: '请求歌曲列表失败',
+          icon: 'none',
+          image: '/img/error.png',
+          size: '5px',
+          duration: 1000,
         })
       }
     })
