@@ -8,3 +8,22 @@
   padding: 200rpx 0;
   box-sizing: border-box;
 } 
+
+.bg{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    -webkit-filter: blur(20px);
+    filter: blur(20px);
+    -webkit-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+view{
+  font: 14px/1.5 Helvetica,sans-serif,STHeiTi;
+}
+
+text{
+  font: 14px/1.5 Helvetica,sans-serif,STHeiTi;
+}

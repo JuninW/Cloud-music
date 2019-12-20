@@ -1,11 +1,12 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/pic_info/info"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#ff1616",
+    "navigationBarBackgroundColor": "#d43c33",
     "navigationBarTitleText": "网易云音乐",
     "navigationBarTextStyle": "white"
   },

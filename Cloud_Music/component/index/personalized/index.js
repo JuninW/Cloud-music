@@ -96,5 +96,13 @@ Component({
         return parseFloat(parseInt(num / 10000) + '.' + decimal) + '万';
       }
     },
+    infoPic(e){
+      wx.showLoading({
+        title: '加载中',
+      })
+      wx.navigateTo({
+        url: '/pages/pic_info/info?id=' + e.currentTarget.dataset.id
+      }, wx.hideLoading())
+    }
   }
 })

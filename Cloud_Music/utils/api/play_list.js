@@ -12,10 +12,17 @@ import { http } from '../http'; // 引入刚刚封装好的http模块，import�
 function personalized(params) {
   http('/personalized','get',params)
 }
+
+function personalized_info(params){
+  http('/playlist/detail','get',params)
+}
+
 export default { // 暴露接口
   inxeList,
-  personalized
+  personalized,
+  personalized_info
 }
+
 
 
 

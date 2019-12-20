@@ -5,15 +5,18 @@
     <view class="box-title">
       推荐歌单
     </view>
-    <view>
-      <view wx:for='{{tabList}}' wx:for-item='item' wx:key='id' class="pic-box">
+    <view style="margin-bottm:10px;" >
+      <view wx:for='{{tabList}}' wx:for-item='item' wx:key='id' class="pic-box" data-id='{{item.id}}' bindtap="infoPic">
         <image src="{{item.picUrl}}" class="pic-img" mode="widthFix">
         </image>
         <view class="pic-num-box">
           <icon class="pic-clickNum-after"></icon>
           <text class="pic-clickNum">{{item.playCount}}</text>
         </view>
+        <view class="pic-introduce">
+          <text>{{item.name}}</text>
 
+        </view>
       </view>
 
     </view>
@@ -21,13 +24,21 @@
   <!-- 最新音乐 -->
   <view>
     <view class="box-title">
-      最近音乐
+      最新音乐
     </view>
     <view>
       <view wx:for='{{newSongList}}' wx:key='id' class="song-box">
-        <view class="song-title">{{item.name}}<text>{{item.song.alias}}</text></view>
+        <view style="display: inline-block">
+          <view class="song-title">{{item.name}}
+            <text class="song-introduce">{{item.song.alias}}</text>
+          </view>
 
-        <view>{{item.song.artists[0].name}}</view>
+          <view class="song-singer" style="padding-left:15px">
+            <view class="SQ">SQ</view> {{item.song.artists[0].name}}</view>
+        </view>
+        <view class="song-live">
+          <image src="../../../img/play.png" class="live-i" mode="widthFix"></image>
+        </view>
 
       </view>
     </view>

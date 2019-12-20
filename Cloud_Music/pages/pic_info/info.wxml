@@ -1,0 +1,18 @@
+<!--pages/pic_info/info.wxml-->
+<view>
+  <view>
+  <!-- 顶部歌单图片 -->
+  <view class="pic-title">
+    <view class="bg-box bg" style="background-image:url({{bgClover.background}})">
+    </view>
+      <image src="{{info.coverImgUrl}}" class="bg-cover"></image>
+      <text></text>
+      <view>
+
+      </view>
+      <text>{{info.name}}</text>
+  </view>
+
+  </view>
+
+</view>

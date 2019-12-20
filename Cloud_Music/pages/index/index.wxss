@@ -19,8 +19,8 @@
 }
 
 .on {
-  color: rgb(224, 30, 30);
-  border-bottom: 2px solid red;
+  color: #d43c33;
+  border-bottom: 2px solid #d43c33;
   font-size: 16px;
 }
 

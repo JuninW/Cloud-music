@@ -1,0 +1,26 @@
+/* pages/pic_info/info.wxss */
+.pic-title{
+  position: relative;
+
+}
+.bg-box{
+  padding: 30px 10px 30px 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+.bg-box ::after {
+    content: " ";
+    background-color: rgba(0,0,0,.25);
+}
+.bg-cover{
+  position: absolute;
+  z-index: 99;
+  width: 30%;
+  height: '',
+}
