@@ -1,0 +1,5 @@
+<!--pages/play_music/music.wxml-->
+
+<view class="music-box">
+<image src="{{info[0].al.picUrl}}" class="music-bg bg" mode="heightFix"></image>
+</view>

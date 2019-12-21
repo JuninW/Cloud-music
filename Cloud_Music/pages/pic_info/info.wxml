@@ -1,18 +1,50 @@
 <!--pages/pic_info/info.wxml-->
-<view>
-  <view>
-  <!-- 顶部歌单图片 -->
+<view class="box" style="height:{{scrollHeight}}px">
   <view class="pic-title">
-    <view class="bg-box bg" style="background-image:url({{bgClover.background}})">
-    </view>
-      <image src="{{info.coverImgUrl}}" class="bg-cover"></image>
-      <text></text>
-      <view>
+    <view>
+      <view class="bg-box bg" style="background-image:url({{bgClover.background}})">
+      </view>
+
+      <image src="{{info.coverImgUrl}}" class="bg-cover" mode="widthFix"></image>
+      <view class="pic-lin">
+        <view class="pic-txt">
+          <text>{{info.name}}</text>
+          <view class="pic-nickname" >
+            <image class="autor-img " src="{{info.creator.avatarUrl}}" mode="widthFix"></image>
+            <view class="autor-img-after"></view>
+            {{info.creator.nickname}}
+          </view>
+
+
+        </view>
 
       </view>
-      <text>{{info.name}}</text>
+    </view>
   </view>
+  <view class="pic-nav">
+    <view class="Label">
+      标签：
+      <text wx:for='{{info.tags}}' wx:key='id' class="tabs">{{item}}</text>
+      <view class="description">
+        简介 ：{{info.description}}
+      </view>
+    </view>
+  </view>
+  <view class="song-title">
+    歌曲列表
+  </view>
+  <view style="height:80px">
+    <view wx:for="{{info.tracks}}" wx:key='id' style="margin-top:10px">
+      <view class="song-index">
+        <text> {{index+1}}</text>
+      </view>
+      <view class="song-name"  bindtap="play_music" data-id='{{item.id}}'>
+        <image src="../../img/play.png" class="play" mode="widthFix"></image>
+        <text class="song-Music">{{item.name}} </text>
+        <text>\n</text>
+        <text class="song-author">{{item.ar[0].name}}</text>
+      </view>
+    </view>
 
   </view>
-
 </view>

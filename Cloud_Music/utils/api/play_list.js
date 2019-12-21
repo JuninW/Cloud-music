@@ -13,14 +13,27 @@ function personalized(params) {
   http('/personalized','get',params)
 }
 
+//歌单详情
 function personalized_info(params){
   http('/playlist/detail','get',params)
+}
+
+//歌曲详情
+function music_info(params){
+  http('/song/detail','get',params)
+}
+
+//歌曲播放路径
+function music_play(params){
+  http('/song/url','get',params)
 }
 
 export default { // 暴露接口
   inxeList,
   personalized,
-  personalized_info
+  personalized_info,
+  music_info,
+  music_play
 }
 
 

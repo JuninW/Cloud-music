@@ -1,0 +1,25 @@
+/* pages/play_music/music.wxss */
+
+.music-box {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+}
+
+.music-bg {
+  background-color: #000;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  transform-origin: center top;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}

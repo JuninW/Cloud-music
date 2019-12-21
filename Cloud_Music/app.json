@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/pic_info/info"
+    "pages/pic_info/info",
+    "pages/play_music/music"
   ],
   "window": {
     "backgroundTextStyle": "light",

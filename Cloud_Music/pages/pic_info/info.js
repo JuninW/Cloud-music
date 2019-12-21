@@ -7,7 +7,8 @@ Page({
    */
   data: {
     info:{},
-    bgClover:{}
+    bgClover:{},
+    scrollHeight:''
   },
 
   /**
@@ -15,6 +16,16 @@ Page({
    */
   onLoad: function (options) {
     this.getInfo(options.id)
+    var that = this
+
+    //抓取到第一屏设备高度方便css操作
+    wx.getSystemInfo({
+      success: function (res) {
+        that.setData({
+          scrollHeight: res.windowHeight 
+        });
+      }
+    });
   },
 
   /**
@@ -54,15 +65,25 @@ Page({
       },
       success: res => {
           wx.hideLoading()
-          console.log(res)
+        
         this.setData({
           info : res.playlist,
           bgClover :{
             'background': res.playlist.coverImgUrl
           } 
         })
-        console.log(this.data.bgClover)
       }
     })
+  },
+
+  play_music:function(e){
+    wx.showLoading({
+      title: '加载中',
+    })
+    wx.navigateTo({
+      url: '/pages/play_music/music?id=' + e.currentTarget.dataset.id,
+    },
+    wx.hideLoading()
+    )
   }
 })

@@ -71,6 +71,7 @@
 }
 
 .song-box{
+  margin-bottom: 5px;
   padding:10px; 
   font-size: 16px;
   height: 30px;
@@ -86,7 +87,8 @@
 }
 .song-live{
   display: inline-block;
-  width: 7%;
+  width: 22px;
+  height: 22px;
   position:absolute;
   top:50%;
   right:10px;
