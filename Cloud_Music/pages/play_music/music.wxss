@@ -23,3 +23,56 @@
   overflow: hidden;
   z-index: 1;
 }
+
+.music-img {
+  width: 230px;
+  height: 230px;
+  position: relative;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.music-banner {
+  width: 70%;
+  z-index: 99;
+  border-radius: 50%;
+  animation: rotation 9999950s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation-fill-mode:forwards;
+}
+
+@keyframes rotation{
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(99999999deg);} 
+    
+  } 
+.music-play {
+  width: 100%;
+  z-index: 99;
+}
+
+.img-teg {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.play-icon{
+  width: 50px;
+  z-index: 9999;
+}
+
+.aag-box {
+  margin-left: 100px;
+}
+
+.aag-img {
+  width: 100px;
+  z-index: 999;
+  position: absolute;
+  top: -25px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
