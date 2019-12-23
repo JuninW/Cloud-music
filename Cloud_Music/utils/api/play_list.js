@@ -27,13 +27,18 @@ function music_info(params){
 function music_play(params){
   http('/song/url','get',params)
 }
+//获取歌词
+function getlyric(params){
+  http('/lyric','get',params)
+}
 
 export default { // 暴露接口
   inxeList,
   personalized,
   personalized_info,
   music_info,
-  music_play
+  music_play,
+  getlyric
 }
 
 

@@ -76,3 +76,26 @@
   right: 0;
   margin: auto;
 }
+.contentText-box{
+  z-index: 99999;
+  bottom: 10px;
+  height: 100px;
+}
+.cont-box{
+  position: relative;
+  height: 150px;
+}
+.contentText{
+  text-align: center;
+  position: absolute;
+  width: 60%;
+  height: 150px;
+  left:0;
+  right: 0;
+  top: 0;
+  margin: auto;
+  z-index: 99999;
+}
+.currentTime{
+  color:red;
+}

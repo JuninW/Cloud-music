@@ -73,6 +73,16 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    play_music: function (e) {
+      wx.showLoading({
+        title: '加载中',
+      })
+      wx.navigateTo({
+        url: '/pages/play_music/music?id=' + e.currentTarget.dataset.id,
+      },
+        wx.hideLoading()
+      )
+    },
     /**
         * 数字转整数 如 100000 转为10万
         * @param {需要转化的数} num 

@@ -27,7 +27,7 @@
       最新音乐
     </view>
     <view>
-      <view wx:for='{{newSongList}}' wx:key='id' class="song-box">
+      <view wx:for='{{newSongList}}' wx:key='id' class="song-box" data-id="{{item.id}}" bindtap="play_music">
         <view style="display: inline-block">
           <view class="song-title">{{item.name}}
             <text class="song-introduce">{{item.song.alias}}</text>

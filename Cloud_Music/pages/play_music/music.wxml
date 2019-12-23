@@ -13,4 +13,11 @@
       <audio src="{{url}}" id="myAudio"></audio>
     </view>
   </view>
+<scroll-view  class="cont-box" scroll-y="true" scroll-with-animation='true' scroll-top='{{marginTop}}'>
+      <view class='contentText'>
+           <view wx:for='{{storyContent}}'>
+               <text class="{{currentIndex222 == index ? 'currentTime' : ''}}">{{item}}</text>
+            </view>
+       </view>
+</scroll-view>
 </view>
