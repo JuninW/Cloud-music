@@ -10,14 +10,15 @@
       <image src="/img/play-in.png" class="music-play img-teg" mode="widthFix"></image>
       <image src="{{info[0].al.picUrl}}" class="music-banner img-teg" mode="widthFix" bindtap="off" style="animation-play-state:{{show}}"></image>
       <image src="/img/playMusic.png" class="play-icon img-teg" mode="widthFix" bindtap="off" style="display:{{stop}}"></image>
-      <audio src="{{url}}" id="myAudio"></audio>
+      <audio  id="myAudio" ></audio>
     </view>
   </view>
-<scroll-view  class="cont-box" scroll-y="true" scroll-with-animation='true' scroll-top='{{marginTop}}'>
-      <view class='contentText'>
-           <view wx:for='{{storyContent}}'>
-               <text class="{{currentIndex222 == index ? 'currentTime' : ''}}">{{item}}</text>
-            </view>
-       </view>
-</scroll-view>
+  <view style="cont-box">
+    <scroll-view class="cont-box wrap"  scroll-with-animation='true' scroll-into-view='{{viewId}}' scroll-y='true'>
+    <view class='contentText' wx:for='{{storyContent}}' wx:key='id' class='{{viewId=="el-"+index?"activelrc":"none"}}' style="margin:10px 0;" id='el-{{index}}' >
+         {{item}}
+    </view>
+  </scroll-view>
+  
+  </view>
 </view>

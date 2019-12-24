@@ -9,11 +9,12 @@ Page({
     info: {},
     play: false,
     stop: 'none',
-    url: '',
     marginTop: 0,
     storyContent: [],
     lrcDir:'',
     currentIndex222: 0,
+    viewId:'el-00:00',
+   
     show: 'rotation 81s forwards cubic-bezier(0.22, 0.61, 0.36, 1) '
   },
 
@@ -21,6 +22,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.audioCtx = wx.createInnerAudioContext('myAudio')
+
     let that = this
     http.music_info({
       data: {
@@ -32,9 +35,11 @@ Page({
         })
         that.getInfo()
         that.lyric()
+        that.off()
       }
 
     })
+
   },
   getInfo: function () {
     let that = this
@@ -43,31 +48,43 @@ Page({
         id: that.options.id
       },
       success: function (res) {
-        that.setData({
-          url: res.data[0].url
-        })
-        that.audioCtx.play()
-        
+        that.audioCtx.src = res.data[0].url
       }
+      
     })
   },
   off: function () {
-    let num = !this.data.play
+    let num =!this.data.play
     this.setData({
       play: num
     })
     if (num == true) {
       this.setData({
         show: 'paused',
-        stop: 'block'
+        stop: 'block',
+      
       })
       this.audioCtx.pause()
     } else {
       this.setData({
         show: 'running',
-        stop: 'none'
+        stop: 'none',
+       
       })
       this.audioCtx.play()
+      let that = this
+      console.log()
+      that.audioCtx.onTimeUpdate(function () {
+         let duration = that.audioCtx.duration; //时长
+         let currentTime = that.audioCtx.currentTime; //当前播放位置
+         var start = that.turnTime(currentTime);
+         var end = that.turnTime(duration);
+         if (start in that.data.storyContent && 'el-' + start != that.data.viewId) {
+            that.setData({
+              viewId: 'el-' + start
+            })
+          }
+      })
     }
   },
   //获取歌词
@@ -94,15 +111,9 @@ Page({
             storyContent: json
           })
         
-        console.log(that.data.storyContent)
       }
     })
   },
-
-
-  //歌词滚动事件
-  
-
   //换算时间
   turnTime:function(num) {
     var minute = Math.floor(num / 60);
@@ -116,16 +127,12 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-
-  },
 
   /**
    * 生命周期函数--监听页面隐藏
