@@ -1,0 +1,64 @@
+/* pages/logoIn/logoin.wxss */
+
+.logo-bg{
+  width: 100%;
+  height: 100%;
+  background-color: #d43c33;
+}
+.logo{
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top:20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 100%;
+}
+.button-phone{
+  color: #d43c33;
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 150px;
+  left: 0;
+  right: 0;
+  margin:auto; 
+  animation: show 2s linear;
+}
+.button-ema{
+  text-align: center;
+  color: rgb(252, 252, 252);
+  font-size: 12px;
+  font-weight: 500;
+  position: absolute;
+  bottom: 120px;
+  left: 0;
+  right: 0;
+  margin:auto;
+}
+.inp-box{
+  position: relative;
+  height: 500px;
+}
+.inp-id{
+  position: absolute;
+  width: 200px;
+  bottom: 50%;
+  left: 0;
+  right: 0;
+  margin:auto;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  
+}
+
+.next{
+   position: absolute;
+   width: 30px;
+   height: 30px;
+    bottom: 40%;
+    left: 0;
+    right: 0;
+     margin:auto;
+}

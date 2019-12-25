@@ -1,0 +1,12 @@
+<!--pages/logoIn/logoin.wxml-->
+<view class="logo-bg" style="height:{{windowHeight+'px'}}">
+  <image src="/img/cloudmusic.png" class="logo"></image>
+  <view  animation="{{animation}}">
+    <button class="button-phone" bindtap="logoin_phon">手机号登陆</button>
+    <text class="button-ema">邮箱登陆</text>
+  </view>
+   <view class="inp-box">
+   <input class="inp-id" placeholder="手机号码" maxlength="20" placeholder-style="color:#ccc"></input>
+   <image src="/img/Next.png" class="next" ></image>
+  </view>
+</view>

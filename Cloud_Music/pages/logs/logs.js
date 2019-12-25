@@ -1,15 +1,25 @@
-//logs.js
-const util = require('../../utils/util.js')
-
 Page({
-  data: {
-    logs: []
+      data:{
+
+      },
+  onLoad: function (e){
   },
-  onLoad: function () {
-    this.setData({
-      logs: (wx.getStorageSync('logs') || []).map(log => {
-        return util.formatTime(new Date(log))
-      })
+  onReady:function(e){
+
+  },
+  onShow:function(e){
+    wx.getStorage({
+      key: 'Token',
+      success: function (res) {
+        console.log(res)
+        console.log('获取token成功')
+      },
+      fail: function (err) {
+        console.log('获取token失败')
+        wx.navigateTo({
+          url: '/pages/logoIn/logoin'
+        })
+      }
     })
   }
 })

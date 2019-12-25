@@ -1,6 +1,5 @@
 //index.js
 //获取应用实例
-const app = getApp()
 import http from '../../utils/api/play_list.js'
 Page({
   data: {
