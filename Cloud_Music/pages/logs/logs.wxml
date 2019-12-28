@@ -1,2 +1,5 @@
 <!--logs.wxml-->
-<view></view>
+<view>
+你好{{name}}
+
+</view>

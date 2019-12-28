@@ -31,6 +31,10 @@ function music_play(params){
 function getlyric(params){
   http('/lyric','get',params)
 }
+//登录
+function logoin(params){
+  http('/login/cellphone', 'post', params)
+}
 
 export default { // 暴露接口
   inxeList,
@@ -38,7 +42,8 @@ export default { // 暴露接口
   personalized_info,
   music_info,
   music_play,
-  getlyric
+  getlyric,
+  logoin
 }
 
 

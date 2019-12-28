@@ -15,12 +15,13 @@
   margin: auto;
   border-radius: 100%;
 }
+
 .button-phone{
   color: #d43c33;
   font-size: 16px;
   font-weight: 500;
   position: absolute;
-  bottom: 150px;
+  bottom: 45%;
   left: 0;
   right: 0;
   margin:auto; 
@@ -32,7 +33,7 @@
   font-size: 12px;
   font-weight: 500;
   position: absolute;
-  bottom: 120px;
+  bottom: 40%;
   left: 0;
   right: 0;
   margin:auto;
@@ -40,6 +41,7 @@
 .inp-box{
   position: relative;
   height: 500px;
+  opacity:0;
 }
 .inp-id{
   position: absolute;

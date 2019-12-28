@@ -1,3 +1,5 @@
+
+import http from '../../utils/api/user.js'
 Page({
       data:{
 
@@ -9,13 +11,19 @@ Page({
   },
   onShow:function(e){
     wx.getStorage({
-      key: 'Token',
+      key: 'uid',
       success: function (res) {
         console.log(res)
-        console.log('获取token成功')
+        console.log('获取uid成功')
+
+        http.userInfo({
+          data:{
+            uid:res.data
+          }
+        })
       },
       fail: function (err) {
-        console.log('获取token失败')
+        console.log('获取uid失败')
         wx.navigateTo({
           url: '/pages/logoIn/logoin'
         })
