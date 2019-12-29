@@ -36,7 +36,7 @@
   width: 70%;
   z-index: 99;
   border-radius: 50%;
-  animation: rotation 9999950s cubic-bezier(0.22, 0.61, 0.36, 1);
+  animation: rotation 9999950s linear;
   animation-fill-mode:forwards;
 }
 

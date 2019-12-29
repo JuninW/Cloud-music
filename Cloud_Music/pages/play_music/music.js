@@ -1,5 +1,6 @@
 // pages/play_music/music.js
 import http from '../../utils/api/play_list.js'
+var app = getApp()
 Page({
 
   /**
@@ -7,14 +8,14 @@ Page({
    */
   data: {
     info: {},
-    play: false,
+    play: true,
     stop: 'none',
     marginTop: 0,
     storyContent: [],
     lrcDir:'',
     currentIndex222: 0,
     viewId:'el-00:00',
-   
+    isNow: 'false',
     show: 'rotation 81s forwards cubic-bezier(0.22, 0.61, 0.36, 1) '
   },
 
@@ -22,18 +23,31 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.audioCtx = wx.createInnerAudioContext('myAudio')
+    this.audioCtx = app.audioCtx
 
     let that = this
     http.music_info({
       data: {
-        ids: this.options.id
+        ids: that.options.id
       },
       success: function (res) {
         that.setData({
           info: res.songs
         })
-        that.getInfo()
+
+        //判断是否在后台有播放
+        wx.getStorage({
+          key: 'mid',
+          success: function (res) {
+            if (res.data != that.options.id) {
+              that.getInfo()
+            }
+          },
+          fail:function(res) {
+            that.getInfo()
+          }
+
+        })
         that.lyric()
         that.off()
       }
@@ -55,36 +69,40 @@ Page({
   },
   off: function () {
     let num =!this.data.play
-    this.setData({
+    var that = this
+    that.setData({
       play: num
     })
     if (num == true) {
-      this.setData({
+      that.setData({
         show: 'paused',
         stop: 'block',
       
       })
-      this.audioCtx.pause()
+      that.audioCtx.pause()
     } else {
-      this.setData({
+      that.setData({
         show: 'running',
         stop: 'none',
        
       })
-      this.audioCtx.play()
-      let that = this
-      console.log()
-      that.audioCtx.onTimeUpdate(function () {
-         let duration = that.audioCtx.duration; //时长
-         let currentTime = that.audioCtx.currentTime; //当前播放位置
-         var start = that.turnTime(currentTime);
-         var end = that.turnTime(duration);
-         if (start in that.data.storyContent && 'el-' + start != that.data.viewId) {
+      that.audioCtx.onPlay(()=>{})
+      
+      setTimeout(()=>{
+        that.audioCtx.play()
+        that.audioCtx.onTimeUpdate(function () {
+          let duration = that.audioCtx.duration; //时长
+          let currentTime = that.audioCtx.currentTime; //当前播放位置
+          var start = that.turnTime(currentTime);
+          var end = that.turnTime(duration);
+          if (start in that.data.storyContent && 'el-' + start != that.data.viewId) {
             that.setData({
               viewId: 'el-' + start
             })
           }
-      })
+        })
+      },600)
+      
     }
   },
   //获取歌词
@@ -145,7 +163,11 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    var that = this
+    wx.setStorage({
+      key: 'mid',
+      data: this.options.id ,
+    })
   },
 
   /**

@@ -1,5 +1,7 @@
 //app.js
+import './vendor/weapp-cookie/dist/weapp-cookie'
 App({
+  audioCtx : wx.createInnerAudioContext(),
   onLaunch: function () {
     // 展示本地存储能力
 

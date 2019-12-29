@@ -10,7 +10,6 @@
       <image src="/img/play-in.png" class="music-play img-teg" mode="widthFix"></image>
       <image src="{{info[0].al.picUrl}}" class="music-banner img-teg" mode="widthFix" bindtap="off" style="animation-play-state:{{show}}"></image>
       <image src="/img/playMusic.png" class="play-icon img-teg" mode="widthFix" bindtap="off" style="display:{{stop}}"></image>
-      <audio  id="myAudio" ></audio>
     </view>
   </view>
   <view style="cont-box">
