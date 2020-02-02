@@ -5,7 +5,7 @@ Page({
   data: {
     currentid: ''
   },
-
+  
   //获取推荐
   recommend: function(e) {
     var that = this
@@ -45,5 +45,6 @@ Page({
       currentid: e.target.dataset.tapid
     })
   }
+
 
 })

@@ -5,7 +5,7 @@
     <view class="box-title">
       推荐歌单
     </view>
-    <view style="margin-bottm:10px;" >
+    <view style="margin-bottm:10px;">
       <view wx:for='{{tabList}}' wx:for-item='item' wx:key='id' class="pic-box" data-id='{{item.id}}' bindtap="infoPic">
         <image src="{{item.picUrl}}" class="pic-img" mode="widthFix">
         </image>
@@ -27,9 +27,9 @@
       最新音乐
     </view>
     <view>
-      <view wx:for='{{newSongList}}' wx:key='id' class="song-box" data-id="{{item.id}}" bindtap="play_music">
+      <view wx:for='{{newSongList}}' wx:key='id' class="song-box" >
         <view style="display: inline-block">
-          <view class="song-title">{{item.name}}
+          <view class="song-title" data-id="{{item.id}}" bindtap="play_music">{{item.name}}
             <text class="song-introduce">{{item.song.alias}}</text>
           </view>
 
@@ -37,10 +37,12 @@
             <view class="SQ">SQ</view> {{item.song.artists[0].name}}</view>
         </view>
         <view class="song-live">
-          <image src="../../../img/play.png" class="live-i" mode="widthFix"></image>
-        </view>
+          <image src="../../../img/play.png" class="live-i" mode="widthFix" data-isPlayNow="{{item.isPlayNow}}" wx:if='{{!item.isPlayNow}}' data-id="{{item.id}}"  data-index="{{item.index}}" bindtap="isPlay"></image>
+          <image src="../../../img/stop.png" class="live-i" mode="widthFix" data-isPlayNow="{{item.isPlayNow}}" wx:if='{{item.isPlayNow}}' data-id="{{item.id}}"  data-index="{{item.index}}" bindtap="isPlay"></image>
 
+        </view>
       </view>
     </view>
   </view>
+  <button bindtap="isPlay">测试</button>
 </view>

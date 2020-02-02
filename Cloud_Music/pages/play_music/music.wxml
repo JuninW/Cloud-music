@@ -13,11 +13,11 @@
     </view>
   </view>
   <view style="cont-box">
-    <scroll-view class="cont-box wrap"  scroll-with-animation='true' scroll-into-view='{{viewId}}' scroll-y='true'>
-    <view class='contentText' wx:for='{{storyContent}}' wx:key='id' class='{{viewId=="el-"+index?"activelrc":"none"}}' style="margin:10px 0;" id='el-{{index}}' >
-         {{item}}
-    </view>
-  </scroll-view>
-  
+    <scroll-view class="cont-box wrap" scroll-with-animation='true' scroll-into-view='{{viewId}}' scroll-y='true'>
+      <view class='contentText' wx:for='{{storyContent}}' wx:key='id' class='{{viewId=="el-"+index?"activelrc":"none"}}' style="margin:10px 0;" id='el-{{index}}'>
+        {{item}}
+      </view>
+    </scroll-view>
+
   </view>
 </view>
